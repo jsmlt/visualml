@@ -1,0 +1,8 @@
+#page { display: flex; flex-wrap: wrap;
+  #sidebar { width: 30%; border-right: 1px solid #ccc; box-sizing: border-box; }
+  #main { flex: 1 0 auto; height: 100vh; }
+}
+
+@media all and (max-width: 768px) {
+  #page #sidebar { width: 100%; }
+}

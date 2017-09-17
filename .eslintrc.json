@@ -1,0 +1,32 @@
+{
+  "extends": "airbnb-base",
+  "plugins": [
+    "import",
+    "react"
+  ],
+  "env": {
+    "jquery": true,
+    "browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-mixed-operators": "off",
+    "no-restricted-syntax": "off",
+    "no-continue": "off",
+    "comma-dangle": "off",
+    "no-constant-condition": "off",
+    "class-methods-use-this": "off",
+    "no-unused-vars": "off",
+    "dot-notation": "off"
+  },
+  "globals": {
+    "WPI": true,
+    "wpApiSettings": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
