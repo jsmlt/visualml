@@ -1,5 +1,5 @@
-<img src="https://raw.githubusercontent.com/jsmlt/visualml/master/assets/screenshot.png" alt="VisualML Screenshot" align="center" />
-_JSMLT in action (with VisualML)_
+![VisualML Screenshot](https://raw.githubusercontent.com/jsmlt/visualml/master/assets/screenshot.png)
+ _JSMLT in action (with VisualML)_
 
 # JSMLT: VisualML
 A React application for visualization of popular supervised learning algorithms using [JSMLT](https://github.com/jsmlt/jsmlt). You can choose the machine learning algorithm you want to run, add data points to a 2-dimensional space, and run your chosen machine learning algorithm in an interactive, web-based environment.
