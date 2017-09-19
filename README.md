@@ -1,8 +1,11 @@
 ![VisualML Screenshot](https://raw.githubusercontent.com/jsmlt/visualml/master/assets/screenshot.png)
-_JSMLT in action (with VisualML)_
+ _JSMLT in action (with VisualML)_
 
 # JSMLT: VisualML
 A React application for visualization of popular supervised learning algorithms using [JSMLT](https://github.com/jsmlt/jsmlt). You can choose the machine learning algorithm you want to run, add data points to a 2-dimensional space, and run your chosen machine learning algorithm in an interactive, web-based environment.
+
+## [VisualML.io](http://visualml.io)
+If you want to try VisualML in your browser right away, without installing anything, go to [visualml.io](http://visualml.io): it's up and running, ready to be used!
 
 ## Installation
 > Currently, the VisualML environment relies on NPM and a locally linked build of JSMLT. This is a temporary solution, used during development.
