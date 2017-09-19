@@ -14889,7 +14889,7 @@ var _home = __webpack_require__(288);
 
 var _home2 = _interopRequireDefault(_home);
 
-__webpack_require__(313);
+__webpack_require__(312);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37319,8 +37319,7 @@ var Canvas = function () {
 exports.default = Canvas;
 
 /***/ }),
-/* 312 */,
-/* 313 */
+/* 312 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

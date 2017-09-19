@@ -72,5 +72,6 @@ input[type="checkbox"] {
       position: absolute; }
 
 @media all and (max-width: 768px) {
-  #page #sidebar {
-    width: 100%; } }
+  #page {
+    flex-direction: column;
+    /*#sidebar { width: 100%; }*/ } }
