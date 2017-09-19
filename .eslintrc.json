@@ -18,7 +18,8 @@
     "no-constant-condition": "off",
     "class-methods-use-this": "off",
     "no-unused-vars": "off",
-    "dot-notation": "off"
+    "dot-notation": "off",
+    "prefer-destructuring": "off"
   },
   "globals": {
     "WPI": true,
