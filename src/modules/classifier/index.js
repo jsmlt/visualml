@@ -1,7 +1,6 @@
 // Standard imports
 import { connect } from 'react-redux';
 import { Component } from 'react';
-import jQuery from 'jquery';
 
 // Local imports
 import jsmlt from '@jsmlt/jsmlt';
@@ -65,7 +64,6 @@ class Classifier extends Component {
     this.canvas.addListener('click', (x, y) => {
       // Class index of new data point
       const classIndex = this.props.currentClassIndex;
-      // jQuery('[name="new-data-class"]:checked').val();
 
       // Add new data point
       const datapoint = this.dataset.addDatapoint([x, y]);
