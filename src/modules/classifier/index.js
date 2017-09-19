@@ -10,20 +10,6 @@ import { updateRunStatus } from '../../actions';
 class Classifier extends Component {
   componentDidMount() {
     this.initialize();
-
-    window.addEventListener('resize', () => this.updateDimensions());
-    this.canvas.resize();
-  }
-
-  componentWillMount() {
-    this.updateDimensions();
-  }
-
-  updateDimensions() {
-    this.setState({
-      width: jQuery(window).width(),
-      height: jQuery(window).height()
-    });
   }
 
   canvasClassify(canvas, dataset) {
@@ -101,8 +87,7 @@ class Classifier extends Component {
     }
 
     return (
-      <canvas ref="canvas">
-      </canvas>
+      <canvas ref="canvas"></canvas>
     );
   }
 }
