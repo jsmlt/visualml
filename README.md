@@ -1,4 +1,4 @@
-![VisualML Screenshot](https://raw.githubusercontent.com/jsmlt/visualml/master/assets/screenshot.png)
+<img src="https://raw.githubusercontent.com/jsmlt/visualml/master/assets/screenshot.png" alt="VisualML Screenshot" align="center" />
 _JSMLT in action (with VisualML)_
 
 # JSMLT: VisualML
