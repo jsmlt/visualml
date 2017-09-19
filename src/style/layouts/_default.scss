@@ -1,6 +1,8 @@
 #page { display: flex; flex-wrap: wrap;
-  #sidebar { width: 30%; border-right: 1px solid #ccc; box-sizing: border-box; }
-  #main { flex: 1 0 auto; height: 100vh; }
+  #sidebar { flex: 0 0 auto; border-right: 1px solid #ccc; box-sizing: border-box; }
+  #main { flex: 1 0 auto; height: 100vh; position: relative;
+    canvas { position: absolute; }
+  }
 }
 
 @media all and (max-width: 768px) {
