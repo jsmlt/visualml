@@ -36752,6 +36752,8 @@ var _datapoint2 = _interopRequireDefault(_datapoint);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
@@ -36916,14 +36918,28 @@ var Canvas = function () {
         });
 
         document.addEventListener('mousemove', function (e) {
-          _this2.mouseX = e.pageX;
-          _this2.mouseY = e.pageY;
+          var _transformAbsolutePos = _this2.transformAbsolutePositionToRelativePosition(e.clientX, e.clientY);
+
+          var _transformAbsolutePos2 = _slicedToArray(_transformAbsolutePos, 2);
+
+          _this2.mouseX = _transformAbsolutePos2[0];
+          _this2.mouseY = _transformAbsolutePos2[1];
         });
       }
 
       this.canvas.element.addEventListener('mousedown', function (e) {
-        _this2.click(e.pageX, e.pageY);
+        _this2.click.apply(_this2, _toConsumableArray(_this2.transformAbsolutePositionToRelativePosition(e.clientX, e.clientY)));
       });
+    }
+  }, {
+    key: 'transformAbsolutePositionToRelativePosition',
+    value: function transformAbsolutePositionToRelativePosition(x, y) {
+      // Properties used for calculating mouse position
+      var el = this.canvas.element;
+      var rect = el.getBoundingClientRect();
+      var win = el.ownerDocument.defaultView;
+
+      return [x - rect.left - win.pageXOffset, y - rect.top - win.pageYOffset];
     }
 
     /**
@@ -37117,14 +37133,9 @@ var Canvas = function () {
   }, {
     key: 'convertCanvasCoordinatesToFeatures',
     value: function convertCanvasCoordinatesToFeatures(x, y) {
-      // Properties used for calculating mouse position
-      var el = this.canvas.element;
-      var rect = el.getBoundingClientRect();
-      var win = el.ownerDocument.defaultView;
-
       // Mouse x- and y-position on [0,1] interval
-      var f1 = (x - rect.left + win.pageXOffset) / this.canvas.width;
-      var f2 = (y - rect.top + win.pageYOffset) / this.canvas.height;
+      var f1 = x / this.canvas.width;
+      var f2 = y / this.canvas.height;
 
       // Convert to [-1,1] interval
       f1 = -1 + f1 * 2;
