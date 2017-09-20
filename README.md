@@ -20,7 +20,6 @@ $ git clone git@github.com:jsmlt/visualml.git
 ```
 $ cd jsmlt
 $ npm link
-
 ```
 **Step 3.** Move to the `visualml` directory and link the JSMLT package. This will make the local JSMLT package available for VisualML. Then, install the actual module using npm.
 ```
