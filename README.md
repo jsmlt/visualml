@@ -38,6 +38,6 @@ VisualML is now set up. You can proceed with step 5 to easily access it from a b
 
 ** (optional) Step 5.** VisualML includes [`webpack-dev-server`](https://webpack.github.io/docs/webpack-dev-server.html), which allows you to easily access it from your web browser. To do so, run
 ```
-npm run-script dev-server
+$ npm run-script dev-server
 ```
 VisualML is now accessible from http://localhost:8080/
