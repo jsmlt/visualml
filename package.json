@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack --watch --progress --colors",
     "build": "webpack -p",
+    "dev-server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,6 +47,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "webpack-dev-server": "^2.8.2"
   }
 }
