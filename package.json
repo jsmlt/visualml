@@ -1,6 +1,6 @@
 {
   "name": "@jsmlt/visualml",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A visualization of popular supervised learning algorithms using [JSMLT](https://github.com/jsmlt/jsmlt).",
   "main": "src/index.js",
   "scripts": {
