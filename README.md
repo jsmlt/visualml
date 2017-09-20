@@ -36,7 +36,7 @@ $ npm build
 
 VisualML is now set up. You can proceed with step 5 to easily access it from a browser.
 
-**(optional) Step 5.** VisualML includes [`webpack-dev-server`](https://webpack.github.io/docs/webpack-dev-server.html), which allows you to easily access it from your web browser. To do so, run
+**Step 5 (optional).** VisualML includes [`webpack-dev-server`](https://webpack.github.io/docs/webpack-dev-server.html), which allows you to easily access it from your web browser. To do so, run
 ```
 $ npm run-script dev-server
 ```
