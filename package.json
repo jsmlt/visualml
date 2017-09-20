@@ -4,7 +4,7 @@
   "description": "A visualization of popular supervised learning algorithms using [JSMLT](https://github.com/jsmlt/jsmlt).",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "webpack --watch --progress --colors",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
