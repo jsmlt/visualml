@@ -40,4 +40,4 @@ VisualML is now set up. You can proceed with step 5 to easily access it from a b
 ```
 $ npm run-script dev-server
 ```
-VisualML is now accessible from http://localhost:8080/
+VisualML is now accessible from http://localhost:8080/.
