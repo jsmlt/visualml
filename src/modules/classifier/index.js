@@ -16,22 +16,28 @@ class Classifier extends Component {
     let classifier = null;
 
     if (this.props.classifierType === 'knn') {
-      classifier = new jsmlt.Classifier.KNN();
+      classifier = new jsmlt.Supervised.Neighbors.KNN();
     } else if (this.props.classifierType === 'binarysvm') {
-      classifier = new jsmlt.Classifier.BinarySVM({
-        kernel: new jsmlt.Classification.GaussianKernel(0.5)
+      classifier = new jsmlt.Supervised.SVM.BinarySVM({
+        kernel: new jsmlt.Kernel.Gaussian(0.5)
       });
       // classifier = new jsmlt.Classifier.SVMJS.SVM();
     } else if (this.props.classifierType === 'svm') {
-      classifier = new jsmlt.Classifier.SVM({
-        kernel: new jsmlt.Classification.GaussianKernel(0.5)
+      classifier = new jsmlt.Supervised.SVM.SVM({
+        kernel: new jsmlt.Kernel.Gaussian(0.5)
       });
     } else {
-      classifier = new jsmlt.Classifier.Perceptron();
+      classifier = new jsmlt.Supervised.Linear.Perceptron();
     }
 
     if (dataset.numDatapoints > 1) {
-      classifier.train(dataset.getFeaturesArray(), dataset.getLabelsArray());
+      const X = dataset.getFeaturesArray();
+
+      const labels = dataset.getLabelsArray();
+      const encoder = new jsmlt.Preprocessing.LabelEncoder();
+      const y = encoder.encode(labels);
+
+      classifier.train(X, y);
 
       // classifier.train(dataset.getFeaturesArray(), dataset.getLabelsArray().map((x) =>
       // x === "0" ? -1 : 1), {kernel: jsmlt.Classifier.SVMJS.makeRbfKernel(1)});
@@ -47,7 +53,16 @@ class Classifier extends Component {
 
       // Generate predictions for grid
       const boundaries = new jsmlt.Classification.Boundaries();
-      canvas.setClassBoundaries(boundaries.calculateClassifierDecisionBoundaries(classifier, 51));
+      const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(classifier, 51);
+
+      // Convert boundary keys (class indices) to labels
+      const labelBoundaries = Object.keys(classIndexBoundaries).reduce((a, x) => ({
+        ...a,
+        [encoder.decode(x)]: classIndexBoundaries[x],
+      }), {});
+
+      // Store class boundaries in canvas
+      canvas.setClassBoundaries(labelBoundaries);
     }
   }
 
