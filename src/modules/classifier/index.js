@@ -21,7 +21,6 @@ class Classifier extends Component {
       classifier = new jsmlt.Supervised.SVM.BinarySVM({
         kernel: new jsmlt.Kernel.Gaussian(0.5)
       });
-      // classifier = new jsmlt.Classifier.SVMJS.SVM();
     } else if (this.props.classifierType === 'svm') {
       classifier = new jsmlt.Supervised.SVM.SVM({
         kernel: new jsmlt.Kernel.Gaussian(0.5)
@@ -38,12 +37,6 @@ class Classifier extends Component {
       const y = encoder.encode(labels);
 
       classifier.train(X, y);
-
-      // classifier.train(dataset.getFeaturesArray(), dataset.getLabelsArray().map((x) =>
-      // x === "0" ? -1 : 1), {kernel: jsmlt.Classifier.SVMJS.makeRbfKernel(1)});
-
-      // classifier.train(dataset.getFeaturesArray(), dataset.getLabelsArray().map((x) =>
-      // x === "0" ? -1 : 1));
 
       if (this.props.classifierType === 'binarysvm') {
         dataset.getDataPoints().forEach((x, i) => {
