@@ -19,7 +19,8 @@
     "class-methods-use-this": "off",
     "no-unused-vars": "off",
     "dot-notation": "off",
-    "prefer-destructuring": "off"
+    "prefer-destructuring": "off",
+    "object-curly-newline": "off"
   },
   "globals": {
     "WPI": true,

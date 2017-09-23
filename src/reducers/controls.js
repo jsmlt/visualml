@@ -1,35 +1,11 @@
-export default (state = {
-  classIndex: '0',
-  autorunEnabled: true,
-  runStatus: 0,
-  classifier: 'svm',
-}, action) => {
-  switch (action.type) {
-    case 'UPDATE_CLASSIFIER':
-      return {
-        ...state,
-        classifier: action.classifier,
-      };
+// Standard imports
+import { combineReducers } from 'redux';
 
-    case 'UPDATE_ADD_DATAPOINT_CLASSINDEX':
-      return {
-        ...state,
-        classIndex: action.classIndex,
-      };
+// Local imports
+import interaction from './controls/interaction';
+import svm from './controls/svm';
 
-    case 'UPDATE_AUTORUN_ENABLED':
-      return {
-        ...state,
-        autorunEnabled: action.enabled,
-      };
-
-    case 'UPDATE_RUNSTATUS':
-      return {
-        ...state,
-        runStatus: action.status,
-      };
-
-    default:
-      return state;
-  }
-};
+export default combineReducers({
+  interaction,
+  svm,
+});

@@ -26,3 +26,8 @@ export const updateRunStatus = status => ({
   type: 'UPDATE_RUNSTATUS',
   status: uuid(),
 });
+
+export const updateSVMKernel = kernel => ({
+  type: 'UPDATE_SVM_KERNEL',
+  kernel,
+});

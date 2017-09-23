@@ -15,13 +15,13 @@ class Classifier extends Component {
     // Train classifier
     let classifier = null;
 
-    if (this.props.classifierType === 'knn') {
+    if (this.props.classifierType === 'KNN') {
       classifier = new jsmlt.Supervised.Neighbors.KNN();
     } else if (this.props.classifierType === 'binarysvm') {
       classifier = new jsmlt.Supervised.SVM.BinarySVM({
         kernel: new jsmlt.Kernel.Gaussian(0.5)
       });
-    } else if (this.props.classifierType === 'svm') {
+    } else if (this.props.classifierType === 'SVM') {
       classifier = new jsmlt.Supervised.SVM.SVM({
         kernel: new jsmlt.Kernel.Gaussian(0.5)
       });
@@ -99,10 +99,10 @@ class Classifier extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentClassIndex: state.controls.classIndex,
-  autorunEnabled: state.controls.autorunEnabled,
-  runStatus: state.controls.runStatus,
-  classifierType: state.controls.classifier,
+  currentClassIndex: state.controls.interaction.classIndex,
+  autorunEnabled: state.controls.interaction.autorunEnabled,
+  runStatus: state.controls.interaction.runStatus,
+  classifierType: state.controls.interaction.classifier,
 });
 
 export default connect(mapStateToProps)(Classifier);
