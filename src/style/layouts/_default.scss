@@ -1,5 +1,10 @@
 #page { display: flex; flex-wrap: wrap;
-  #sidebar { flex: 0 0 auto; border-right: 1px solid #ccc; box-sizing: border-box; }
+  #sidebar { flex: 0 0 auto; border-right: 1px solid #ccc; box-sizing: border-box;
+    > div { display: flex; flex-direction: column; min-height: 100%;
+      > .content { flex: 1 0 auto; }
+      > footer { border-top: 1px solid #ddd; }
+    }
+  }
   #main { flex: 1 0 auto; height: 100vh; position: relative;
     canvas { position: absolute; }
   }

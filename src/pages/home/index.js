@@ -9,7 +9,9 @@ class Home extends Component {
   render() {
     return (
       <div id="page">
-        <sidebar id="sidebar"><Controls /></sidebar>
+        <sidebar id="sidebar">
+          <Controls />
+        </sidebar>
         <div id="main">
           <Classifier />
         </div>

@@ -11,4 +11,5 @@ export const getKernel = (controls) => {
 
 export default controls => (new jsmlt.Supervised.SVM.SVM({
   kernel: getKernel(controls),
+  C: 10 ** controls.svm.C,
 }));

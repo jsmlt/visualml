@@ -31,3 +31,8 @@ export const updateSVMKernel = kernel => ({
   type: 'UPDATE_SVM_KERNEL',
   kernel,
 });
+
+export const updateSVMC = C => ({
+  type: 'UPDATE_SVM_C',
+  C,
+});

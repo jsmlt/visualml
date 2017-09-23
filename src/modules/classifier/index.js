@@ -8,10 +8,20 @@ import Classifiers from '../../classifiers';
 import { updateRunStatus } from '../../actions';
 
 class Classifier extends Component {
+  getGridCoordinates() {
+    // x1, y1, x2, y2
+    return [-5, -5, 5, 5];
+  }
+
   componentDidMount() {
     // Create canvas
+    const gridCoordinates = this.getGridCoordinates();
     this.canvas = new jsmlt.UI.Canvas(this.refs.canvas, {
-      continuousClick: true
+      continuousClick: true,
+      x1: gridCoordinates[0],
+      y1: gridCoordinates[1],
+      x2: gridCoordinates[2],
+      y2: gridCoordinates[3],
     });
 
     // Initialize dataset
@@ -56,7 +66,11 @@ class Classifier extends Component {
 
       // Generate predictions for grid
       const boundaries = new jsmlt.Classification.Boundaries();
-      const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(classifier, 51);
+      const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(
+        classifier,
+        51,
+        this.getGridCoordinates()
+      );
 
       // Convert boundary keys (class indices) to labels
       const labelBoundaries = Object.keys(classIndexBoundaries).reduce((a, x) => ({
@@ -67,34 +81,6 @@ class Classifier extends Component {
       // Store class boundaries in canvas
       canvas.setClassBoundaries(labelBoundaries);
     }
-  }
-
-  initialize() {
-    // Create canvas
-    this.canvas = new jsmlt.UI.Canvas(this.refs.canvas, {
-      continuousClick: true
-    });
-
-    // Initialize dataset
-    this.dataset = new jsmlt.Data.Dataset();
-
-    // Handle canvas clicks
-    this.canvas.addListener('click', (x, y) => {
-      // Class index of new data point
-      const classIndex = this.props.currentClassIndex;
-
-      // Add new data point
-      const datapoint = this.dataset.addDatapoint([x, y]);
-      datapoint.setClassIndex(classIndex);
-
-      // Add newly added data point to canvas
-      this.canvas.addDatapoint(datapoint);
-
-      // Classifier
-      if (this.props.autorunEnabled) {
-        this.canvasClassify(this.canvas, this.dataset);
-      }
-    });
   }
 
   render() {
