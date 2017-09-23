@@ -36,3 +36,8 @@ export const updateSVMC = C => ({
   type: 'UPDATE_SVM_C',
   C,
 });
+
+export const updateSVMSigmaSquared = sigmaSquared => ({
+  type: 'UPDATE_SVM_SIGMA_SQUARED',
+  sigmaSquared,
+});

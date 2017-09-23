@@ -1,7 +1,7 @@
 export default (state = {
   kernel: 'linear',
   C: 0,
-  gamma: 1.0,
+  sigmaSquared: 0,
 }, action) => {
   switch (action.type) {
     case 'UPDATE_SVM_KERNEL':
@@ -14,6 +14,12 @@ export default (state = {
       return {
         ...state,
         C: action.C,
+      };
+
+    case 'UPDATE_SVM_SIGMA_SQUARED':
+      return {
+        ...state,
+        sigmaSquared: action.sigmaSquared,
       };
 
     default:
