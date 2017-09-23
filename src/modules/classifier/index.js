@@ -4,30 +4,40 @@ import { Component } from 'react';
 
 // Local imports
 import jsmlt from '@jsmlt/jsmlt';
+import Classifiers from '../../classifiers';
 import { updateRunStatus } from '../../actions';
 
 class Classifier extends Component {
   componentDidMount() {
-    this.initialize();
+    // Create canvas
+    this.canvas = new jsmlt.UI.Canvas(this.refs.canvas, {
+      continuousClick: true
+    });
+
+    // Initialize dataset
+    this.dataset = new jsmlt.Data.Dataset();
+
+    // Handle canvas clicks
+    this.canvas.addListener('click', (x, y) => {
+      // Class index of new data point
+      const classIndex = this.props.currentClassIndex;
+
+      // Add new data point
+      const datapoint = this.dataset.addDatapoint([x, y]);
+      datapoint.setClassIndex(classIndex);
+
+      // Add newly added data point to canvas
+      this.canvas.addDatapoint(datapoint);
+
+      // Classifier
+      if (this.props.autorunEnabled) {
+        this.canvasClassify(this.canvas, this.dataset);
+      }
+    });
   }
 
   canvasClassify(canvas, dataset) {
-    // Train classifier
-    let classifier = null;
-
-    if (this.props.classifierType === 'KNN') {
-      classifier = new jsmlt.Supervised.Neighbors.KNN();
-    } else if (this.props.classifierType === 'binarysvm') {
-      classifier = new jsmlt.Supervised.SVM.BinarySVM({
-        kernel: new jsmlt.Kernel.Gaussian(0.5)
-      });
-    } else if (this.props.classifierType === 'SVM') {
-      classifier = new jsmlt.Supervised.SVM.SVM({
-        kernel: new jsmlt.Kernel.Gaussian(0.5)
-      });
-    } else {
-      classifier = new jsmlt.Supervised.Linear.Perceptron();
-    }
+    const classifier = Classifiers[this.props.classifierType].getClassifier(this.props.controls);
 
     if (dataset.numDatapoints > 1) {
       const X = dataset.getFeaturesArray();
@@ -103,6 +113,7 @@ const mapStateToProps = state => ({
   autorunEnabled: state.controls.interaction.autorunEnabled,
   runStatus: state.controls.interaction.runStatus,
   classifierType: state.controls.interaction.classifier,
+  controls: state.controls,
 });
 
 export default connect(mapStateToProps)(Classifier);
