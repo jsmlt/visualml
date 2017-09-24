@@ -1,4 +1,4 @@
-@mixin button { height: 34px; line-height: 34px; vertical-align: middle; box-sizing: border-box; padding: 0 12px; border-color: #cccccc; background: #f7f7f7; font-size: 16px; color: #363d40; box-shadow: 0 1px 0 #cccccc; cursor: pointer;
+@mixin button { height: 34px; line-height: 34px; vertical-align: middle; box-sizing: border-box; padding: 0 12px; border: 1px solid #cccccc; border-radius: 3px; background: #f7f7f7; font-size: 16px; color: #363d40; box-shadow: 0 1px 0 #cccccc; cursor: pointer; text-decoration: none;
   &:hover { background: #fafafa; border-color: #999; color: #23282d; }
   &.disabled { color: #a0a5aa; border-color: #ddd; background: #f7f7f7; box-shadow: none; text-shadow: 0 1px 0 #fff; cursor: default; transform: none; }
 }
