@@ -41,3 +41,8 @@ export const updateSVMSigmaSquared = sigmaSquared => ({
   type: 'UPDATE_SVM_SIGMA_SQUARED',
   sigmaSquared,
 });
+
+export const updateKNNNumNeighbours = numNeighbours => ({
+  type: 'UPDATE_KNN_NUM_NEIGHBOURS',
+  numNeighbours,
+});
