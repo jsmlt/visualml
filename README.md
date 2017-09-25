@@ -11,27 +11,20 @@ A React application for visualization of popular supervised learning algorithms 
 If you want to try VisualML in your browser right away, without installing anything, go to [visualml.io](http://visualml.io): it's up and running, ready to be used!
 
 ## Installation
-Currently, the VisualML environment relies on NPM and a locally linked build of JSMLT. This is a temporary solution, used during development. The steps below provide instructions on how to get VisualML running using `webpack-dev-server`.
+The VisualML environment is an NPM package which can be run locally using `webpack-dev-server`. The steps below outline the process, and will get VisualML up and running within a minute!
 
-**Step 1.** Go to a newly created directory where you want to store JSMLT and VisualML, and clone the repositories:
+**Step 1.** Go to a newly created directory and clone VisualML from GitHub:
 ```
-$ git clone git@github.com:jsmlt/jsmlt.git
 $ git clone git@github.com:jsmlt/visualml.git
 ```
 
-**Step 2.** Move to the new directory `jsmlt` (where JSMLT was just cloned) and link the package for local usage. This will allow us to make the JSMLT package available to VisualML.
+**Step 2.** Move to the new directory `visualml` and install the package.
 ```
-$ cd jsmlt
-$ npm link
-```
-**Step 3.** Move to the `visualml` directory and link the JSMLT package. This will make the local JSMLT package available for VisualML. Then, install the actual module using npm.
-```
-$ cd ../visualml
-$ npm link @jsmlt/jsmlt
+$ cd visualml
 $ npm install
 ```
 
-**Step 4.** Build the module using npm.
+**Step 3.** Build the module using npm.
 ```
 $ npm build
 ```
