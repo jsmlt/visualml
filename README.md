@@ -2,8 +2,8 @@
  _JSMLT in action (with VisualML). Live demo on [visualml.io](http://visualml.io)._
 
 # JSMLT: VisualML
-[![npm](https://img.shields.io/npm/v/@jsmlt/visualml.svg)](https://www.npmjs.com/package/@jsmlt/visualml)
-[![npm](https://img.shields.io/npm/dm/@jsmlt/visualml.svg)](https://www.npmjs.com/package/@jsmlt/visualml)
+[![npm](https://img.shields.io/npm/v/@jsmlt/visualml.svg?style=flat-square)](https://www.npmjs.com/package/@jsmlt/visualml)
+[![npm](https://img.shields.io/npm/dm/@jsmlt/visualml.svg?style=flat-square)](https://www.npmjs.com/package/@jsmlt/visualml)
 [![GitHub stars](https://img.shields.io/github/stars/jsmlt/visualml.svg?style=social&label=Star)](https://github.com/jsmlt/visualml)
 
 A React application for visualization of popular supervised learning algorithms using [JSMLT](https://github.com/jsmlt/jsmlt). You can choose the machine learning algorithm you want to run, add data points to a 2-dimensional space, and run your chosen machine learning algorithm in an interactive, web-based environment.
