@@ -51,4 +51,10 @@ module.exports = {
       allChunks: true
     })
   ],
+  node: {
+    console: false,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
 }
