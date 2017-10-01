@@ -66,6 +66,7 @@ class Classifier extends Component {
 
       // Generate predictions for grid
       const boundaries = new jsmlt.Classification.Boundaries();
+
       const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(
         classifier,
         51,

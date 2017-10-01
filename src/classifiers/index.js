@@ -1,10 +1,12 @@
 // Local imports
-import SVM from './svm';
-import Perceptron from './perceptron';
 import KNN from './knn';
+import LogisticRegression from './logistic_regression';
+import Perceptron from './perceptron';
+import SVM from './svm';
 
 export default {
-  SVM,
-  Perceptron,
   KNN,
+  LogisticRegression,
+  Perceptron,
+  SVM,
 };
