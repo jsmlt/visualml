@@ -1,5 +1,6 @@
 // Standard imports
 import { connect } from 'react-redux';
+import { FaGithub, FaHome } from 'react-icons/lib/fa';
 
 // Local imports
 import { updateAddDatapointClassIndex, updateAutorunEnabled, updateRunStatus,
@@ -16,6 +17,20 @@ const Controls = ({
   return (
     <div>
       <div className="content">
+        <fieldset>
+          <a
+            className="iconized left"
+            href="http://visualml.io"
+            target="_blank"
+            title="JSMLT Homepage"
+          ><FaHome size={24} /></a>
+          <a
+            className="iconized right"
+            href="https://github.com/jsmlt"
+            target="_blank"
+            title="GitHub repository"
+          ><FaGithub size={24} /></a>
+        </fieldset>
         <fieldset>
           <label>Class for new data points:</label>
           <select
