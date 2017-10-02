@@ -37,7 +37,7 @@ const Controls = ({
             <option value="SVM">SVM</option>
             <option value="Perceptron">Perceptron</option>
             <option value="KNN">KNN</option>
-            <option value="LogisticRegression">LogisticRegression</option>
+            <option value="LogisticRegression">Logistic Regression</option>
           </select>
         </fieldset>
         {ClassifierControls &&
