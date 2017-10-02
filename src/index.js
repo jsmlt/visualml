@@ -1,7 +1,7 @@
 // Standard imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, hashHistory } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
@@ -18,7 +18,7 @@ const store = createStore(vmlApp);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter history={hashHistory}>
       <App>
         <Route exact path="/" component={PageHome} />
       </App>

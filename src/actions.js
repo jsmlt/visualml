@@ -42,6 +42,21 @@ export const updateSVMSigmaSquared = sigmaSquared => ({
   sigmaSquared,
 });
 
+export const updateSVMDegree = degree => ({
+  type: 'UPDATE_SVM_DEGREE',
+  degree,
+});
+
+export const updateSVMGamma = gamma => ({
+  type: 'UPDATE_SVM_GAMMA',
+  gamma,
+});
+
+export const updateSVMCoef0 = coef0 => ({
+  type: 'UPDATE_SVM_COEF0',
+  coef0,
+});
+
 export const updateKNNNumNeighbours = numNeighbours => ({
   type: 'UPDATE_KNN_NUM_NEIGHBOURS',
   numNeighbours,
